@@ -1,0 +1,23 @@
+name: Environment Queue Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    environment: my-exclusive-environment
+
+    steps:
+      - name: Show start time
+        run: echo "Start: $(date)"
+
+      - name: Simulate work
+        run: |
+          SLEEP=120
+          echo "Sleeping for $SLEEP seconds to simulate a long build..."
+          sleep $SLEEP
+
+      - name: Show end time
+        run: echo "End: $(date)"
