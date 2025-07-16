@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Show start time
-        run: echo "Start: $(date)"
+        run: echo "Start at $(date)"
 
       - name: Simulate work
         run: |
@@ -20,4 +20,4 @@ jobs:
           sleep $SLEEP
 
       - name: Show end time
-        run: echo "End: $(date)"
+        run: echo "End at $(date)"
